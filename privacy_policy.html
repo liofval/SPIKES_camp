@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー | SPIKES STAY PROJECT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0b;
+    --paper: #f5f2ec;
+    --accent: #c8401a;
+    --muted: #6b6860;
+    --border: rgba(15,14,11,0.12);
+    --card: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    line-height: 1.85;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(245,242,236,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-back {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .nav-back:hover { color: var(--accent); }
+
+  .doc { max-width: 760px; margin: 0 auto; padding: 5rem 1.5rem 6rem; }
+  .doc-tag {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .doc-tag::after {
+    content: ''; display: block; flex: 1; max-width: 3rem; height: 1px; background: var(--accent);
+  }
+  h1 {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .meta {
+    color: var(--muted); font-size: 0.85rem; font-weight: 300;
+    margin-bottom: 3rem; padding-bottom: 2rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .meta div { margin-bottom: 0.25rem; }
+
+  h2 {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 1.25rem; letter-spacing: -0.01em;
+    margin: 3rem 0 1rem; padding-top: 1rem;
+    border-top: 0.5px solid var(--border);
+  }
+  h3 {
+    font-size: 1rem; font-weight: 700;
+    margin: 2rem 0 0.75rem; color: var(--ink);
+  }
+  p { margin-bottom: 1rem; }
+  ol, ul { margin: 0.5rem 0 1.25rem 1.5rem; }
+  ol li, ul li { margin-bottom: 0.5rem; }
+  strong { font-weight: 700; color: var(--ink); }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 1.5rem 0; font-size: 0.85rem;
+    background: var(--card); border: 0.5px solid var(--border);
+  }
+  th, td {
+    padding: 0.7rem 0.85rem; text-align: left;
+    border-bottom: 0.5px solid var(--border);
+    border-right: 0.5px solid var(--border);
+  }
+  th:last-child, td:last-child { border-right: none; }
+  th {
+    background: var(--paper);
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 0.78rem; letter-spacing: 0.04em;
+  }
+  table.scope th, table.scope td { text-align: center; }
+  table.scope th:first-child, table.scope td:first-child { text-align: left; font-weight: 700; }
+  .ok { color: #2a7a3b; font-weight: 700; }
+  .ng { color: var(--muted); }
+  .blockquote {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .footnote {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 0.5px solid var(--border);
+    font-size: 0.85rem; color: var(--muted);
+    font-style: italic; font-weight: 300;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(245,242,236,0.4);
+    padding: 3rem 5vw; font-size: 0.8rem;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer a { color: rgba(245,242,236,0.4); text-decoration: none; }
+  footer a:hover { color: var(--paper); }
+  .footer-links { display: flex; gap: 2rem; }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem; }
+    .doc { padding: 3rem 1.25rem 4rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 0.5rem 0.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">SPIKES STAY</a>
+  <a class="nav-back" href="index.html">← Back to top</a>
+</nav>
+
+<article class="doc">
+  <div class="doc-tag">Document 02 / Privacy Policy</div>
+  <h1>SPIKES STAY PROJECT プライバシーポリシー</h1>
+  <div class="meta">
+    <div><strong>制定日：</strong>2025年●月●日</div>
+    <div><strong>運営：</strong>SPIKES STAY PROJECT 実行委員会（以下「運営」）</div>
+  </div>
+
+  <h2>第1条（基本方針）</h2>
+  <p>運営は、参加者の個人情報を適切に保護することが社会的責務であると認識し、個人情報の保護に関する法律（個人情報保護法）その他の関連法規を遵守します。本プライバシーポリシー（以下「本ポリシー」）は、ホスト・ゲストマッチングサービス「SPIKES STAY PROJECT」（以下「本サービス」）において収集・利用・管理する個人情報の取り扱いについて定めます。</p>
+
+  <h2>第2条(収集する個人情報の種類)</h2>
+  <h3>ホスト登録者から収集する情報</h3>
+  <table>
+    <thead><tr><th>カテゴリ</th><th>具体的な情報</th></tr></thead>
+    <tbody>
+      <tr><td>基本情報</td><td>氏名（ニックネーム可）、大学・学年</td></tr>
+      <tr><td>所在情報</td><td>最寄駅・町名（番地・号は収集しない）</td></tr>
+      <tr><td>宿泊条件</td><td>最大受け入れ人数、受け入れ可能な性別・時期・禁止事項</td></tr>
+      <tr><td>プロフィール</td><td>属性、「尖り」、夜語りたいこと、自宅の雰囲気</td></tr>
+      <tr><td>連絡先</td><td>Discord ID、X（旧Twitter）ID、その他SNS ID</td></tr>
+    </tbody>
+  </table>
+
+  <h3>ゲスト登録者から収集する情報</h3>
+  <table>
+    <thead><tr><th>カテゴリ</th><th>具体的な情報</th></tr></thead>
+    <tbody>
+      <tr><td>基本情報</td><td>氏名（ニックネーム可）、大学・学年</td></tr>
+      <tr><td>居住情報</td><td>居住地域・最寄駅（任意）</td></tr>
+      <tr><td>プロフィール</td><td>属性、「尖り」、提供できるGive、語りたいテーマ</td></tr>
+      <tr><td>恩返し意向</td><td>将来的な宿泊提供の可否・条件</td></tr>
+      <tr><td>訪問情報</td><td>訪問希望時期・泊数・目的</td></tr>
+      <tr><td>連絡先</td><td>Discord ID、X（旧Twitter）ID、その他SNS ID</td></tr>
+      <tr><td>配慮事項</td><td>アレルギー・健康上の配慮（任意）</td></tr>
+    </tbody>
+  </table>
+
+  <h2>第3条(個人情報の利用目的)</h2>
+  <p>収集した個人情報は、以下の目的にのみ利用します。</p>
+  <ol>
+    <li><strong>ホスト・ゲスト間のマッチング</strong>：最適な宿泊組み合わせの提案・調整。</li>
+    <li><strong>参加者間の情報共有</strong>：ホストのプロフィール情報をゲスト（サービス参加者）に対して公開し、ゲストがホストを選択できるようにする。ゲストのウェイティングリスト情報をホスト（サービス参加者）に対して公開する。</li>
+    <li><strong>運営・連絡業務</strong>：マッチング結果の通知、イベント情報の案内、トラブル発生時の対応。</li>
+    <li><strong>サービス改善</strong>：利用統計の分析（個人を特定しない集計データのみ）。</li>
+    <li><strong>安全性の確保</strong>：規約違反・トラブルが発生した際の対応。</li>
+  </ol>
+
+  <h2>第4条（情報の閲覧範囲）</h2>
+  <h3>ホスト情報の公開範囲</h3>
+  <table class="scope">
+    <thead>
+      <tr><th>情報</th><th>ゲスト参加者</th><th>SPIKES運営</th><th>4S運営</th><th>一般公開</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ニックネーム・大学・学年</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>最寄駅・町名</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>受け入れ条件・人数</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>属性・尖り・語りたいこと</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>Discord ID / X ID</td><td class="ok">✓<br><small>マッチング後</small></td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>住所（番地・号）</td><td class="ng">—</td><td class="ng">—</td><td class="ng">—</td><td class="ng">—</td></tr>
+    </tbody>
+  </table>
+
+  <h3>ゲスト情報の公開範囲</h3>
+  <table class="scope">
+    <thead>
+      <tr><th>情報</th><th>ホスト参加者</th><th>SPIKES運営</th><th>4S運営</th><th>一般公開</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ニックネーム・大学・学年</td><td class="ok">✓<br><small>WL</small></td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>居住地域</td><td class="ok">✓<br><small>WL</small></td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>属性・尖り・Give</td><td class="ok">✓<br><small>WL</small></td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>恩返し意向</td><td class="ok">✓<br><small>WL</small></td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>Discord ID / X ID</td><td class="ok">✓<br><small>マッチング後</small></td><td class="ok">✓</td><td class="ok">✓</td><td class="ng">—</td></tr>
+      <tr><td>アレルギー等配慮事項</td><td class="ok">✓<br><small>マッチング後のみ</small></td><td class="ok">✓</td><td class="ng">—</td><td class="ng">—</td></tr>
+    </tbody>
+  </table>
+
+  <div class="blockquote">
+    <strong>「SPIKES運営」</strong>とは、本プロジェクト実行委員会のメンバー（岸田●●、他●名）を指します。<br>
+    <strong>「4S運営」</strong>とは、4S（Link）プラットフォーム運営関係者を指します。<br>
+    いずれも守秘義務を負うものとします。
+  </div>
+
+  <h2>第5条（第三者への提供）</h2>
+  <p>運営は、以下の場合を除き、参加者の個人情報を第三者へ提供しません。</p>
+  <ol>
+    <li>参加者本人の同意がある場合。</li>
+    <li>法令に基づく場合（警察・裁判所等からの照会等）。</li>
+    <li>生命・身体または財産の保護のために必要であり、本人の同意を得ることが困難である場合。</li>
+  </ol>
+
+  <h2>第6条（個人情報の管理・保護）</h2>
+  <ol>
+    <li>収集した個人情報は、Googleフォーム・Googleスプレッドシート上で管理し、アクセス権限を運営メンバーに限定します。</li>
+    <li>パスワード管理・アクセス権限の定期見直しを行い、不正アクセスの防止に努めます。</li>
+    <li>本サービス終了後（本イベント終了から3ヶ月後を目安）、参加者の個人情報は適切な方法で削除します。ただし、法的義務がある場合はこの限りではありません。</li>
+  </ol>
+
+  <h2>第7条（Cookieその他の追跡技術）</h2>
+  <p>本サービスのWebページは、Google Analytics等のアクセス解析ツールを使用する場合があります。これらのツールはCookieを使用しますが、個人を特定する情報は収集しません。</p>
+
+  <h2>第8条（参加者の権利）</h2>
+  <p>参加者は、自己の個人情報について以下の権利を有します。</p>
+  <ol>
+    <li><strong>開示請求</strong>：自己の個人情報の利用状況の開示を求める権利。</li>
+    <li><strong>訂正・削除請求</strong>：登録情報に誤りがある場合の訂正、または情報の削除を求める権利。</li>
+    <li><strong>利用停止請求</strong>：個人情報の利用・提供の停止を求める権利。</li>
+  </ol>
+  <p>これらの請求は、Discordサーバーの運営チャンネルまたはXのDMにてお申し付けください。</p>
+
+  <h2>第9条（未成年者の個人情報）</h2>
+  <p>18歳未満の参加者の個人情報については、保護者の同意を得たうえで収集・利用します。</p>
+
+  <h2>第10条（ポリシーの変更）</h2>
+  <p>運営は、法令の改正・サービス内容の変更等に伴い、本ポリシーを変更する場合があります。重要な変更を行う場合は、参加者に事前に通知します。</p>
+
+  <h2>第11条（お問い合わせ）</h2>
+  <p>個人情報の取り扱いに関するお問い合わせ・請求については、下記までご連絡ください。</p>
+  <ul>
+    <li>Discord: [サーバーリンクを記載]</li>
+    <li>X: [@アカウント名を記載]</li>
+    <li>担当者: SPIKES STAY PROJECT 実行委員会 個人情報担当</li>
+  </ul>
+
+  <p class="footnote">本ポリシーは、参加者の皆さんが安心して本サービスを利用できるよう、透明性を持って情報管理を行うことを約束します。</p>
+</article>
+
+<footer>
+  <div>© 2025 SPIKES STAY PROJECT 実行委員会</div>
+  <div class="footer-links">
+    <a href="terms_of_service.html">利用規約</a>
+    <a href="privacy_policy.html">プライバシーポリシー</a>
+    <a href="consent_checklist.html">同意チェックリスト</a>
+  </div>
+</footer>
+
+</body>
+</html>

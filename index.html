@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPIKES STAY PROJECT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0b;
+    --paper: #f5f2ec;
+    --accent: #c8401a;
+    --accent2: #1a4fc8;
+    --muted: #6b6860;
+    --border: rgba(15,14,11,0.12);
+    --card: #ffffff;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(245,242,236,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    padding: 8rem 4rem 4rem 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 2rem; height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 36ch;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border: 1.5px solid;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .btn-primary:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-secondary:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+  }
+  .hero-grid > div {
+    background: var(--ink);
+    transition: background 0.4s;
+  }
+
+  .hero-number {
+    position: absolute;
+    bottom: 3rem; left: 3rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 8rem;
+    line-height: 1;
+    color: rgba(255,255,255,0.04);
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .hero-stat {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 2;
+  }
+  .hero-stat-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    color: #fff;
+    display: block;
+  }
+  .hero-stat-label {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 5vw; }
+
+  .section-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .section-tag::after {
+    content: '';
+    display: block;
+    flex: 1;
+    max-width: 3rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    background: var(--card);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .about-lead {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.9;
+    font-weight: 300;
+  }
+  .about-lead strong { color: var(--ink); font-weight: 700; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+  }
+  .stat-card {
+    background: var(--card);
+    padding: 2rem;
+  }
+  .stat-card-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: var(--ink);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-card-num span { color: var(--accent); }
+  .stat-card-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  /* ── HOW ── */
+  .how { max-width: 1100px; margin: 0 auto; }
+  .steps {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+  }
+  .step {
+    background: var(--paper);
+    padding: 2.5rem 2rem;
+    position: relative;
+  }
+  .step-num {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    color: rgba(15,14,11,0.06);
+    line-height: 1;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .step h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .step p {
+    font-size: 0.875rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ── SCHEDULE ── */
+  .schedule-section {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .schedule-inner { max-width: 1100px; margin: 0 auto; }
+  .schedule-section .section-tag { color: #c8401a; }
+  .schedule-section .section-tag::after { background: #c8401a; }
+  .schedule-section h2 { color: var(--paper); }
+
+  .timeline {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .tl-item {
+    padding: 2rem;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    top: 2rem; left: -5px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .tl-month {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+  .tl-item h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--paper);
+  }
+  .tl-item p {
+    font-size: 0.8rem;
+    color: rgba(245,242,236,0.5);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .tl-item.highlight { background: rgba(200,64,26,0.08); }
+  .tl-item.highlight .tl-month { color: #ff6b40; }
+
+  /* ── RULES ── */
+  .rules { background: var(--card); }
+  .rules-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .rule-group h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .rule-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: #fff;
+  }
+  .rule-list { list-style: none; }
+  .rule-list li {
+    font-size: 0.875rem;
+    color: var(--muted);
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .rule-list li::before {
+    content: '—';
+    color: var(--accent);
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  /* ── LEGAL ── */
+  .legal {
+    background: var(--paper);
+    border-top: 0.5px solid var(--border);
+  }
+  .legal-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .legal-cards {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+  }
+  .legal-card {
+    background: var(--card);
+    padding: 2.5rem 2rem;
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.2s;
+    display: block;
+  }
+  .legal-card:hover { background: var(--ink); color: var(--paper); }
+  .legal-card:hover .legal-card-desc { color: rgba(245,242,236,0.6); }
+  .legal-card:hover .legal-arrow { color: var(--accent); }
+
+  .legal-card-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .legal-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .legal-card-desc {
+    font-size: 0.825rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.7;
+    transition: color 0.2s;
+  }
+  .legal-arrow {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+  }
+
+  /* ── LEAD TIME NOTICE ── */
+  .leadtime {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 3rem 5vw;
+    border-top: 2px solid var(--accent);
+  }
+  .leadtime-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .leadtime-icon {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .leadtime h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .leadtime p {
+    font-size: 0.85rem;
+    color: rgba(245,242,236,0.6);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .leadtime p strong { color: var(--paper); font-weight: 700; }
+
+  /* ── JOIN ── */
+  .join {
+    text-align: center;
+    padding: 8rem 5vw;
+    border-top: 0.5px solid var(--border);
+  }
+  .join h2 { margin-bottom: 1rem; }
+  .join p {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 44ch;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+  .join-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(245,242,236,0.4);
+    padding: 3rem 5vw;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer a { color: rgba(245,242,236,0.4); text-decoration: none; }
+  footer a:hover { color: var(--paper); }
+  .footer-links { display: flex; gap: 2rem; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards;
+  }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { height: 40vw; }
+    .about-inner, .rules-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .steps, .timeline, .legal-cards { grid-template-columns: 1fr; }
+    .leadtime-inner { flex-direction: column; gap: 1.5rem; }
+    nav { padding: 1rem; }
+    .nav-links { gap: 1rem; }
+    .hero-left { padding: 6rem 1.5rem 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">SPIKES STAY</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#rules">Rules</a></li>
+    <li><a href="#legal">Legal</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">IVS Kyoto × SPIKES 2025</div>
+    <h1>出会った<br>仲間と<br>過ごす<em>夜</em>が<br>一番深い</h1>
+    <p class="hero-sub">京都の学生が家を開く。関東の学生が訪ねる。<br>宿泊費ゼロが生む、一生続く人間関係。</p>
+    <div class="hero-cta">
+      <a href="#host-form" class="btn btn-primary">ホストとして登録 →</a>
+      <a href="#guest-form" class="btn btn-secondary">ゲストとして登録</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-grid">
+      <div></div><div></div><div></div>
+      <div></div><div></div><div></div>
+      <div></div><div></div><div></div>
+      <div></div><div></div><div></div>
+    </div>
+    <div class="hero-number">50</div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">300<span style="font-size:2rem">家</span></span>
+      <span class="hero-stat-label">目標：自然発生するホスト数</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="section-tag">About</div>
+      <h2>「宿」を<br>「仲間」に<br>変換する</h2>
+    </div>
+    <div>
+      <p class="about-lead">
+        関西圏以外の学生がSPIKESに参加しない理由の一つが<strong>宿泊費</strong>。
+        このプロジェクトは、宿泊費を抑えるだけでなく、
+        <strong>IVSで出会った人の家に泊まる</strong>という体験を通じて、
+        社会人になっても続く本物の人間関係をつくることを目的にしています。
+      </p>
+      <br>
+      <p class="about-lead">
+        京都大学・同志社大学・立命館大学などに通う学生が家を開き、
+        関東・他地域から来る学生を迎える。
+        ホストは「IVSで一番面白いやつを独占できる権利」を得て、
+        ゲストは「旅先の家」を全国に持つ仲間を得る。
+      </p>
+      <br>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-card-num">50<span>+</span></span>
+          <span class="stat-card-desc">まず火付けとして確保する京都ホスト数</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-num">200<span>+</span></span>
+          <span class="stat-card-desc">ホスト50人×4名想定の初期受け入れ人数</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-num">300<span>〜</span></span>
+          <span class="stat-card-desc">目標：自然発生するムーブメントのホスト数</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card-num">¥<span style="color:var(--ink)">0</span></span>
+          <span class="stat-card-desc">ホスト・ゲスト間の金銭授受は完全禁止</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="how">
+    <div class="section-tag">How it works</div>
+    <h2>マッチングの流れ</h2>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h3>ホスト登録（5月〜）</h3>
+        <p>京都の大学生がGoogleフォームで家の情報・プロフィールを登録。最大受け入れ人数・属性・夜語りたいことを入力。GW後に一挙公開。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h3>ゲスト応募（6月〜）</h3>
+        <p>関東・他地域の学生がウェイティングリストを登録。「尖り」「Giveできること」を記載し、ホストの目に留まる。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h3>マッチング成立</h3>
+        <p>ホストがリストからゲストを選んで連絡。成立しない場合は運営がサポートし、バックアップホストやAirbnbシェアを提案。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">04</span>
+        <h3>サイドイベント当日</h3>
+        <p>IVS京都1・2日目の午前（約2時間）にサイドイベントを開催。グルーピングゲームで対面し、最終マッチングを確定。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">05</span>
+        <h3>宿泊・深夜トーク</h3>
+        <p>起業・AI・地方創生……。夜が最も深い議論の場になる。ここから一生続く仲間が生まれる。</p>
+      </div>
+      <div class="step">
+        <span class="step-num">06</span>
+        <h3>恩返しの連鎖</h3>
+        <p>ゲストは将来、自分の街に京都の学生が来たとき泊める側になる。一方向の施しではなく、循環するコミュニティへ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule-section" id="schedule">
+  <div class="schedule-inner">
+    <div class="section-tag">Schedule</div>
+    <h2>スケジュール</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-month">5月</span>
+        <h4>ホスト50名確定</h4>
+        <p>Googleフォーム回答50件以上を目標。京大起業部・同志社起業部・立命館等の学生団体を巻き込む。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-month">GW後</span>
+        <h4>ホストリスト一挙公開</h4>
+        <p>50人のホストをSNSで一斉公開。ホスト側に #SPIKES京都の宿貸します でXでの表明を依頼。ムーブメントに火をつける。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-month">6月</span>
+        <h4>関東側への告知・事前マッチング開始</h4>
+        <p>ゲスト登録受付開始。運営は受け入れ可能人数・待機人数をSNSで定期報告。</p>
+      </div>
+      <div class="tl-item highlight">
+        <span class="tl-month">7月<br>IVS当日</span>
+        <h4>サイドイベント＋最終マッチング</h4>
+        <p>1日目・2日目午前にサイドイベントを開催。グルーピングゲームでの対面マッチング。運営マイクによる引き合わせ。</p>
+      </div>
+      <div class="tl-item highlight">
+        <span class="tl-month">7月<br>夜〜</span>
+        <h4>宿泊開始</h4>
+        <p>マッチング成立した組の宿泊スタート。深夜トークセッションが各地で始まる。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-month">以降</span>
+        <h4>恩返しコミュニティへ</h4>
+        <p>ゲストが自分の街でホストになる循環をつくる。Discordで続くコミュニティへ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="rules" id="rules">
+  <div class="rules-inner">
+    <div>
+      <div class="section-tag">Rules</div>
+      <h2>安心して<br>参加するための<br>ルール</h2>
+      <p style="color:var(--muted);font-size:.875rem;font-weight:300;line-height:1.8;margin-top:1rem;">
+        本プロジェクトは参加者全員が安全・安心に過ごせることを最優先にしています。
+        以下のルールを必ず守ってください。
+      </p>
+    </div>
+    <div>
+      <div class="rule-group" style="margin-bottom:2.5rem">
+        <h3><span class="rule-badge">全員共通</span>絶対NG事項</h3>
+        <ul class="rule-list">
+          <li>異性間の宿泊マッチング（原則禁止）</li>
+          <li>金銭・物品・サービスの要求・授受</li>
+          <li>ビジネス勧誘・マルチ商法・宗教勧誘</li>
+          <li>ホスト宅の個人情報をSNSで無断公開</li>
+          <li>夜22時以降の大声・騒音（近隣への配慮）</li>
+        </ul>
+      </div>
+      <div class="rule-group" style="margin-bottom:2.5rem">
+        <h3><span class="rule-badge" style="background:var(--accent2)">ホスト</span>必ず守ること</h3>
+        <ul class="rule-list">
+          <li>正確な住所情報（町名まで）を登録する</li>
+          <li>断る場合は早めにゲスト・運営へ連絡する</li>
+          <li>ゲストに安全な環境を誠実に提供する</li>
+        </ul>
+      </div>
+      <div class="rule-group">
+        <h3><span class="rule-badge" style="background:#2a7a3b">ゲスト</span>必ず守ること</h3>
+        <ul class="rule-list">
+          <li>ホストのルール・生活習慣を最優先に尊重する</li>
+          <li>ホストの同意なく第三者を連れ込まない</li>
+          <li>宿泊終了後は速やかに退去・清潔を保つ</li>
+          <li>不安・危険を感じたら即座に宿泊を中止してよい</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD TIME NOTICE -->
+<div class="leadtime">
+  <div class="leadtime-inner">
+    <div class="leadtime-icon">!</div>
+    <div>
+      <h3>Web掲載・法務文書のリードタイムについて</h3>
+      <p>
+        利用規約・プライバシーポリシー・本ページは<strong>公開前にレビュー期間が必要</strong>です。
+        Googleフォーム公開・SNS告知の<strong>少なくとも2週間前</strong>までに法務文書の最終確認を完了し、
+        本ページとあわせてWeb掲載を行う必要があります。
+        <strong>「ホストリスト一挙公開（GW後）」</strong>に合わせるなら、<strong>GW前半には全ドキュメントをFIXさせること</strong>が目標です。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- LEGAL -->
+<section class="legal" id="legal">
+  <div class="legal-inner">
+    <div class="section-tag">Legal</div>
+    <h2>法的文書</h2>
+    <p style="color:var(--muted);font-size:.875rem;font-weight:300;margin-top:0.5rem">
+      安心して参加いただくために、以下の文書を必ずご確認ください。フォーム登録時に同意が必要です。
+    </p>
+    <div class="legal-cards">
+      <a href="terms_of_service.html" class="legal-card">
+        <div class="legal-card-label">Document 01</div>
+        <h3>利用規約</h3>
+        <p class="legal-card-desc">ホスト・ゲスト双方の義務・禁止事項、免責事項、マッチングの性質について定めます。</p>
+        <span class="legal-arrow">→</span>
+      </a>
+      <a href="privacy_policy.html" class="legal-card">
+        <div class="legal-card-label">Document 02</div>
+        <h3>プライバシーポリシー</h3>
+        <p class="legal-card-desc">収集する個人情報の種類、ホスト↔ゲスト間・SPIKES/4S運営との情報共有範囲を明示します。</p>
+        <span class="legal-arrow">→</span>
+      </a>
+      <a href="consent_checklist.html" class="legal-card">
+        <div class="legal-card-label">Document 03</div>
+        <h3>重要事項同意チェックリスト</h3>
+        <p class="legal-card-desc">フォーム登録前に必ず確認・同意いただく9項目。特にリスク・禁止事項の重要項目を抜粋。</p>
+        <span class="legal-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join" id="join">
+  <div class="section-tag" style="justify-content:center">Join</div>
+  <h2>さあ、家を開こう。<br>仲間の家に向かおう。</h2>
+  <p>登録は5分で完了。京都の大学生はホスト登録から、<br>関東・他地域の学生はゲスト登録から始めてください。</p>
+  <div class="join-btns">
+    <a href="#host-form" class="btn btn-primary">ホスト登録はこちら →</a>
+    <a href="#guest-form" class="btn btn-secondary">ゲスト登録はこちら</a>
+  </div>
+  <p style="margin-top:2rem;font-size:0.8rem;color:var(--muted)">
+    登録にはフォーム冒頭の重要事項同意チェックリストへの同意が必要です。
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2025 SPIKES STAY PROJECT 実行委員会</div>
+  <div class="footer-links">
+    <a href="terms_of_service.html">利用規約</a>
+    <a href="privacy_policy.html">プライバシーポリシー</a>
+    <a href="https://discord.gg/XXXXXX">Discord</a>
+    <a href="https://x.com/XXXXXX">X</a>
+  </div>
+</footer>
+
+</body>
+</html>

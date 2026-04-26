@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>利用規約 | SPIKES STAY PROJECT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0b;
+    --paper: #f5f2ec;
+    --accent: #c8401a;
+    --muted: #6b6860;
+    --border: rgba(15,14,11,0.12);
+    --card: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    line-height: 1.85;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(245,242,236,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-back {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .nav-back:hover { color: var(--accent); }
+
+  .doc {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+  .doc-tag {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .doc-tag::after {
+    content: '';
+    display: block;
+    flex: 1;
+    max-width: 3rem;
+    height: 1px;
+    background: var(--accent);
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 300;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .meta div { margin-bottom: 0.25rem; }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    margin: 3rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 0.5px solid var(--border);
+  }
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+  p { margin-bottom: 1rem; color: var(--ink); font-weight: 400; }
+
+  ol, ul { margin: 0.5rem 0 1.25rem 1.5rem; }
+  ol li, ul li { margin-bottom: 0.5rem; }
+
+  strong { font-weight: 700; color: var(--ink); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    background: var(--card);
+    border: 0.5px solid var(--border);
+  }
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 0.5px solid var(--border);
+  }
+  th {
+    background: var(--paper);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+  }
+  td:first-child { width: 30%; font-weight: 700; }
+
+  hr {
+    border: none;
+    border-top: 0.5px solid var(--border);
+    margin: 3rem 0;
+  }
+
+  .callout {
+    background: var(--card);
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .footnote {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(245,242,236,0.4);
+    padding: 3rem 5vw;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer a { color: rgba(245,242,236,0.4); text-decoration: none; }
+  footer a:hover { color: var(--paper); }
+  .footer-links { display: flex; gap: 2rem; }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem; }
+    .doc { padding: 3rem 1.25rem 4rem; }
+    table { font-size: 0.85rem; }
+    th, td { padding: 0.6rem 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">SPIKES STAY</a>
+  <a class="nav-back" href="index.html">← Back to top</a>
+</nav>
+
+<article class="doc">
+  <div class="doc-tag">Document 01 / Terms of Service</div>
+  <h1>SPIKES STAY PROJECT 利用規約</h1>
+  <div class="meta">
+    <div><strong>制定日：</strong>2025年●月●日</div>
+    <div><strong>最終改定日：</strong>2025年●月●日</div>
+    <div><strong>運営：</strong>SPIKES STAY PROJECT 実行委員会（以下「運営」）</div>
+  </div>
+
+  <h2>第1条（目的・本規約の適用）</h2>
+  <p>本規約は、SPIKES STAY PROJECT（以下「本プロジェクト」）が提供するホスト・ゲストマッチングサービス（以下「本サービス」）の利用条件を定めるものです。本サービスに参加するすべてのホスト・ゲスト（以下総称して「参加者」）は、本規約に同意したうえで利用するものとします。</p>
+  <p>本プロジェクトは、IVS Kyoto / SPIKES 参加学生を対象に、京都在住の学生（ホスト）と関西圏外から参加する学生（ゲスト）の宿泊マッチングを促進することを目的としています。</p>
+
+  <h2>第2条（定義）</h2>
+  <table>
+    <thead>
+      <tr><th>用語</th><th>定義</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ホスト</td><td>自己の居住する住居・シェアハウス等にゲストの宿泊を提供する参加者</td></tr>
+      <tr><td>ゲスト</td><td>ホストの住居に宿泊する参加者</td></tr>
+      <tr><td>マッチング</td><td>運営またはホスト・ゲスト間の合意によって宿泊組み合わせが成立すること</td></tr>
+      <tr><td>登録情報</td><td>Googleフォーム・4S等を通じて参加者が提出した個人情報およびプロフィール情報</td></tr>
+      <tr><td>本イベント</td><td>IVS Kyoto / SPIKESおよびそのサイドイベント</td></tr>
+    </tbody>
+  </table>
+
+  <h2>第3条（参加資格）</h2>
+  <ol>
+    <li>本サービスへの参加は、本イベントに参加する学生（大学生・大学院生・専門学校生）に限ります。</li>
+    <li>参加者は18歳以上であることを要します。ただし、18歳未満の参加を認める場合には、保護者の同意を別途取得することを条件とします。</li>
+    <li>運営は、参加資格を満たさないと判断した場合、参加を拒否または取り消す権限を有します。</li>
+  </ol>
+
+  <h2>第4条（ホストの義務・禁止事項）</h2>
+  <h3>ホストが行うべきこと</h3>
+  <ol>
+    <li>登録情報（住所の町名・宿泊可能人数・プロフィール等）を正確に入力すること。</li>
+    <li>マッチングが成立した場合、事前にゲストと直接連絡を取り、宿泊条件・到着時間・ルール等を合意すること。</li>
+    <li>宿泊中のゲストに対し、誠実かつ安全な環境を提供するよう努めること。</li>
+    <li>宿泊を断る場合は、マッチング確定前に速やかにゲストおよび運営へ連絡すること。</li>
+  </ol>
+  <h3>ホストの禁止事項</h3>
+  <ol>
+    <li><strong>宿泊の対価として、いかなる名目であっても金銭・物品・サービスを要求すること</strong>（本サービスは無償が原則）。</li>
+    <li>ゲストに対して性的・暴力的・差別的な言動を行うこと。</li>
+    <li>実際の住居状況と著しく異なる情報を登録すること（虚偽登録）。</li>
+    <li>運営の事前許可なく、宿泊者の個人情報を第三者へ提供すること。</li>
+    <li>宿泊を口実としたビジネス勧誘・マルチ商法・宗教勧誘等を行うこと。</li>
+  </ol>
+
+  <h2>第5条（ゲストの義務・禁止事項）</h2>
+  <h3>ゲストが行うべきこと</h3>
+  <ol>
+    <li>ホストの住居のルール・生活習慣を尊重し、誠実に行動すること。</li>
+    <li>宿泊前にホストと直接連絡を取り、到着時間・宿泊期間・注意事項等を確認すること。</li>
+    <li>宿泊終了後は速やかに退去し、使用した場所を清潔に保つこと。</li>
+    <li>宿泊中にトラブルが発生した場合は、速やかに運営へ報告すること。</li>
+  </ol>
+  <h3>ゲストの禁止事項</h3>
+  <ol>
+    <li>ホストが不安・恐怖を感じると申し出た場合に宿泊を強行すること。</li>
+    <li>ホストの同意なく第三者を居住スペースへ連れ込むこと。</li>
+    <li>ホスト宅における飲酒・喫煙（事前許可のある場合を除く）・違法薬物の使用。</li>
+    <li>ホストの個人情報をSNS等で無断公開すること。</li>
+    <li>宿泊を口実としたビジネス勧誘・マルチ商法・宗教勧誘等を行うこと。</li>
+  </ol>
+
+  <h2>第6条（異性間マッチングの禁止）</h2>
+  <div class="callout">
+    <strong>安全性の観点から、異性間の宿泊マッチングは原則として禁止します。</strong>
+  </div>
+  <ul>
+    <li>ホストは同性のゲストのみを受け入れることを原則とします。</li>
+    <li>Googleフォーム登録時に受け入れ可能な性別を明示し、運営はこれを厳守してマッチングを行います。</li>
+    <li>本規定に違反したマッチングを故意に行った参加者は、本サービスの利用資格を即時失います。</li>
+  </ul>
+
+  <h2>第7条（宿泊中の行動規範）</h2>
+  <p>参加者は宿泊期間中、以下の行動規範を遵守するものとします。</p>
+  <ol>
+    <li><strong>夜22時以降</strong>は、近隣住民への配慮のため、窓を閉め、大声での議論・騒音を避けること。</li>
+    <li>近隣・管理会社・警察等から問い合わせを受けた場合は、「友人が遊びに来ている」という範囲で対応し、本プロジェクト名を不必要に開示しないこと。</li>
+    <li>ホスト宅の設備・備品を丁寧に扱い、破損した場合は速やかにホストへ告知・弁償すること。</li>
+    <li>ゴミの分別・処理はホストの指示に従うこと。</li>
+  </ol>
+
+  <h2>第8条（マッチングの性質・運営の関与）</h2>
+  <ol>
+    <li>本サービスにおけるマッチングは、<strong>運営が宿泊を保証するものではありません</strong>。マッチングはあくまで参加者間の自発的な合意に基づきます。</li>
+    <li>マッチングが成立しなかった場合、運営は代替手段（バックアップホストの紹介・ゲストハウス情報の提供・マッチング失敗者同士でのAirbnb利用等）を可能な範囲で提案しますが、宿泊先の確保を保証するものではありません。</li>
+    <li>ホストはウェイティングリストから自己の判断でゲストを選択する権利を有し、理由を開示せず申し込みを断ることができます。</li>
+    <li>ゲストは、マッチング確定後であっても、ホスト宅到着後に危険・不安を感じた場合、宿泊を中止する権利を有します。この場合、運営は可能な範囲でサポートを行います。</li>
+  </ol>
+
+  <h2>第9条（免責事項）</h2>
+  <ol>
+    <li>運営は、ホスト・ゲスト間で発生した<strong>紛争・トラブル・損害・事故等に対して、一切の法的責任を負いません</strong>。</li>
+    <li>宿泊中に発生した盗難・紛失・怪我・財物損害等については、当事者間で解決するものとし、運営はいかなる補償も行いません。</li>
+    <li>参加者は、本サービスの利用に際して自己の責任と判断のもとで行動することを十分に理解したうえで参加するものとします。</li>
+    <li>運営は、登録情報の正確性・完全性を保証しません。虚偽の登録情報に基づいて発生したトラブルについて運営は責任を負いません。</li>
+  </ol>
+
+  <h2>第10条（個人情報の取り扱い）</h2>
+  <p>参加者の個人情報の取り扱いについては、別途定める「<a href="privacy_policy.html">プライバシーポリシー</a>」に従います。参加者は、本規約への同意をもってプライバシーポリシーにも同意したものとみなします。</p>
+
+  <h2>第11条（参加資格の取消・除外）</h2>
+  <p>運営は、以下に該当する参加者の登録を取り消し、本サービスの利用を禁止できるものとします。</p>
+  <ol>
+    <li>本規約に違反した場合。</li>
+    <li>他の参加者・第三者への迷惑行為・ハラスメントを行った場合。</li>
+    <li>虚偽の情報を登録した場合。</li>
+    <li>その他、運営が不適切と判断した場合。</li>
+  </ol>
+
+  <h2>第12条（規約の変更）</h2>
+  <p>運営は、必要に応じて本規約を変更できるものとします。変更後の規約は、運営が指定するWebページ等に掲載した時点から効力を生じます。重要な変更の場合は、参加者に別途通知します。</p>
+
+  <h2>第13条（準拠法・合意管轄）</h2>
+  <p>本規約は日本法に準拠します。本サービスに関連する紛争については、京都地方裁判所を第一審の専属的合意管轄裁判所とします。</p>
+
+  <h2>第14条（お問い合わせ）</h2>
+  <p>本規約に関するお問い合わせは、下記Discordサーバーの運営チャンネルまたはXのDMにてお受けします。</p>
+  <ul>
+    <li>Discord: [サーバーリンクを記載]</li>
+    <li>X: [@アカウント名を記載]</li>
+  </ul>
+
+  <p class="footnote">本規約は、参加者の安全と信頼あるコミュニティ形成のために策定されています。疑問点があれば遠慮なく運営までご連絡ください。</p>
+</article>
+
+<footer>
+  <div>© 2025 SPIKES STAY PROJECT 実行委員会</div>
+  <div class="footer-links">
+    <a href="terms_of_service.html">利用規約</a>
+    <a href="privacy_policy.html">プライバシーポリシー</a>
+    <a href="consent_checklist.html">同意チェックリスト</a>
+  </div>
+</footer>
+
+</body>
+</html>

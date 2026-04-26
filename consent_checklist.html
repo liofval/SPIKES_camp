@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>重要事項同意チェックリスト | SPIKES STAY PROJECT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0b;
+    --paper: #f5f2ec;
+    --accent: #c8401a;
+    --accent2: #1a4fc8;
+    --green: #2a7a3b;
+    --muted: #6b6860;
+    --border: rgba(15,14,11,0.12);
+    --card: #ffffff;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+    line-height: 1.85;
+  }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(245,242,236,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1rem;
+    letter-spacing: 0.04em; color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-back {
+    font-size: 0.8rem; font-weight: 500;
+    color: var(--muted); text-decoration: none;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .nav-back:hover { color: var(--accent); }
+
+  .doc { max-width: 760px; margin: 0 auto; padding: 5rem 1.5rem 6rem; }
+  .doc-tag {
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .doc-tag::after {
+    content: ''; display: block; flex: 1; max-width: 3rem; height: 1px; background: var(--accent);
+  }
+  h1 {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1.5rem;
+  }
+  .lead {
+    color: var(--muted); font-size: 0.95rem; font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 3rem; padding-bottom: 2rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .lead em { font-style: italic; }
+
+  .group-title {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 1.15rem; letter-spacing: -0.01em;
+    margin: 3rem 0 1.5rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .group-badge {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    background: var(--accent); color: #fff;
+  }
+  .group-badge.host { background: var(--accent2); }
+  .group-badge.guest { background: var(--green); }
+
+  .item {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    margin-bottom: 1rem;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .item-check {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    margin-top: 0.2rem;
+  }
+  .item-body { flex: 1; }
+  .item-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .item-num {
+    font-family: 'Syne', sans-serif;
+    color: var(--accent);
+    margin-right: 0.5rem;
+  }
+  .item-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .item-desc strong { color: var(--ink); font-weight: 700; }
+
+  hr.section {
+    border: none;
+    border-top: 0.5px solid var(--border);
+    margin: 3rem 0 2rem;
+  }
+
+  details {
+    margin-top: 4rem;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1.5rem 1.75rem;
+    border-radius: 0;
+  }
+  details summary {
+    cursor: pointer;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  details pre {
+    margin-top: 1.25rem;
+    background: rgba(255,255,255,0.04);
+    padding: 1.25rem;
+    overflow-x: auto;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    color: rgba(245,242,236,0.85);
+  }
+  details code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  .footnote {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--border);
+    font-size: 0.85rem; color: var(--muted);
+    font-style: italic; font-weight: 300;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(245,242,236,0.4);
+    padding: 3rem 5vw; font-size: 0.8rem;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer a { color: rgba(245,242,236,0.4); text-decoration: none; }
+  footer a:hover { color: var(--paper); }
+  .footer-links { display: flex; gap: 2rem; }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem; }
+    .doc { padding: 3rem 1.25rem 4rem; }
+    .item { padding: 1.25rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">SPIKES STAY</a>
+  <a class="nav-back" href="index.html">← Back to top</a>
+</nav>
+
+<article class="doc">
+  <div class="doc-tag">Document 03 / Consent Checklist</div>
+  <h1>重要事項同意チェックリスト</h1>
+  <p class="lead">
+    SPIKES STAY PROJECT — フォーム冒頭に掲載・全項目チェック必須。<br>
+    <em>このチェックリストは、ホスト・ゲストいずれのフォームにも冒頭で設置し、
+    全項目をチェックしないと次のページに進めないよう設定してください（Googleフォームの「必須」設定）。</em>
+  </p>
+
+  <div class="group-title">
+    <span class="group-badge">全参加者共通</span>以下の5項目すべてに同意してください
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">01</span>運営は宿泊の安全・トラブルに責任を負いません</div>
+      <div class="item-desc">
+        本プロジェクトは<strong>参加者間の自発的な合意</strong>に基づくマッチングサービスです。
+        宿泊中に発生した<strong>盗難・怪我・トラブル・損害について、運営は一切の法的責任を負いません</strong>。
+        自己の判断と責任のもとで参加することに同意します。
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">02</span>異性間の宿泊マッチングは禁止です</div>
+      <div class="item-desc">
+        安全性の観点から、<strong>異性間の宿泊は禁止</strong>です。
+        ホストは同性のゲストのみを受け入れ、ゲストも同性のホストのみとマッチングされます。
+        この規則に違反した場合、即座に参加資格を失うことに同意します。
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">03</span>宿泊費・金銭の授受は禁止です</div>
+      <div class="item-desc">
+        ホストはいかなる名目であっても<strong>金銭・物品・サービスを要求することを禁止</strong>します。
+        本サービスは完全無償が原則であることを理解し、同意します。
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">04</span>登録した個人情報は参加者間で共有されます</div>
+      <div class="item-desc">
+        登録したプロフィール情報（氏名/ニックネーム・大学・最寄駅・属性・Discord ID等）は、
+        <strong>マッチングを目的として他の参加者（ホスト・ゲスト）に公開</strong>されます。
+        また、SPIKES実行委員会および4S運営関係者もデータを閲覧します。
+        詳細は<a href="privacy_policy.html" style="color:var(--accent)">プライバシーポリシー</a>をご確認ください。
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">05</span>嫌だと感じたらいつでも断れます・断られる場合もあります</div>
+      <div class="item-desc">
+        ホストは理由を問わずゲストの宿泊を断ることができます。
+        ゲストも、現地到着後に不安を感じた場合は宿泊を中止できます。
+        <strong>マッチングは義務ではなく、お互いの合意が前提</strong>であることに同意します。
+      </div>
+    </div>
+  </div>
+
+  <hr class="section">
+
+  <div class="group-title">
+    <span class="group-badge host">ホスト専用</span>以下の項目にも同意してください
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">06</span>宿泊中は近隣への配慮を徹底します</div>
+      <div class="item-desc">
+        夜22時以降は窓を閉め、大声での会話・騒音を避けます。
+        近隣・管理会社から問い合わせがあった場合は「友人が遊びに来ている」と対応します。
+        本プロジェクト名を不必要に開示しないことに同意します。
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">07</span>登録した住居情報（町名）は参加者に公開されます</div>
+      <div class="item-desc">
+        登録した最寄駅・町名は、マッチング前の段階からゲスト参加者に公開されます。
+        番地・号・建物名は収集・公開されません。
+      </div>
+    </div>
+  </div>
+
+  <hr class="section">
+
+  <div class="group-title">
+    <span class="group-badge guest">ゲスト専用</span>以下の項目にも同意してください
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">08</span>ホストのルールを最優先に尊重します</div>
+      <div class="item-desc">
+        ホスト宅では、ホストの生活ルールを最優先に従います。
+        喫煙・飲酒・第三者の無断連れ込み等はホストの明示的な許可なく行いません。
+        ホスト宅の設備を破損した場合は誠実に弁償します。
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="item-check"></div>
+    <div class="item-body">
+      <div class="item-title"><span class="item-num">09</span>マッチングが保証されるわけではありません</div>
+      <div class="item-desc">
+        本サービスへの登録は、宿泊先の確保を保証するものではありません。
+        マッチングが成立しない場合、自己でゲストハウス・ホテル等を手配する準備があることを確認します。
+      </div>
+    </div>
+  </div>
+
+  <p class="footnote">
+    すべての項目に同意いただいた方のみ、フォームへの回答に進んでください。<br>
+    ご不明な点はDiscordサーバーの運営チャンネルまでお問い合わせください。
+  </p>
+
+  <details>
+    <summary>▾ GASフォームへの実装メモ（開発者向け）</summary>
+<pre><code>// Googleフォームでチェックボックスを必須にする実装例
+
+// 全員共通チェックリスト
+const consentItem = form.addCheckboxItem();
+consentItem.setTitle("【必須】以下の重要事項すべてに同意します")
+  .setHelpText("全項目にチェックを入れないと先に進めません")
+  .setChoices([
+    consentItem.createChoice("① 運営はトラブルに責任を負わないことを理解した"),
+    consentItem.createChoice("② 異性間マッチングが禁止であることを理解した"),
+    consentItem.createChoice("③ 宿泊費・金銭授受が禁止であることを理解した"),
+    consentItem.createChoice("④ 個人情報が参加者間・運営間で共有されることを理解した"),
+    consentItem.createChoice("⑤ マッチングはお互いの合意が前提で、断ることができることを理解した"),
+  ])
+  .setRequired(true);
+// ※ Googleフォームのチェックボックスで「全選択必須」にするには
+// フォームの検証機能で「少なくとも5つを選択」と設定する</code></pre>
+  </details>
+</article>
+
+<footer>
+  <div>© 2025 SPIKES STAY PROJECT 実行委員会</div>
+  <div class="footer-links">
+    <a href="terms_of_service.html">利用規約</a>
+    <a href="privacy_policy.html">プライバシーポリシー</a>
+    <a href="consent_checklist.html">同意チェックリスト</a>
+  </div>
+</footer>
+
+</body>
+</html>

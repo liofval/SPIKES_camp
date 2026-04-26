@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>規約まとめ（印刷用） | SPIKES STAY PROJECT</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #111;
+    background: #fff;
+    line-height: 1.75;
+    font-size: 11.5pt;
+  }
+  .controls {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: #0f0e0b; color: #fff;
+    padding: 0.75rem 1rem;
+    display: flex; align-items: center; gap: 1rem;
+    z-index: 100;
+    font-size: 13px;
+  }
+  .controls strong { font-size: 14px; }
+  .controls button {
+    background: #c8401a; color: #fff;
+    border: none; padding: 0.5rem 1rem;
+    cursor: pointer; font-weight: 700;
+    font-size: 13px;
+  }
+  .controls a { color: #c8401a; margin-left: auto; text-decoration: none; }
+
+  .doc {
+    max-width: 760px;
+    margin: 4rem auto 3rem;
+    padding: 2rem;
+    background: #fff;
+  }
+  h1 {
+    font-size: 22pt; margin-bottom: 0.5rem;
+    border-bottom: 2px solid #c8401a;
+    padding-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 14pt;
+    margin: 2rem 0 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #ccc;
+    color: #c8401a;
+  }
+  h3 { font-size: 12pt; margin: 1rem 0 0.5rem; }
+  p { margin-bottom: 0.6rem; }
+  ol, ul { margin: 0.4rem 0 1rem 1.5rem; }
+  li { margin-bottom: 0.25rem; }
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 0.75rem 0; font-size: 10pt;
+  }
+  th, td {
+    border: 1px solid #999; padding: 0.4rem 0.6rem;
+    text-align: left; vertical-align: top;
+  }
+  th { background: #f3f1eb; font-weight: 700; }
+  table.scope th, table.scope td { text-align: center; }
+  table.scope th:first-child, table.scope td:first-child { text-align: left; }
+  strong { font-weight: 700; }
+
+  .meta { color: #666; font-size: 10pt; margin-bottom: 1.5rem; }
+  .callout {
+    border-left: 3px solid #c8401a;
+    background: #faf6ef;
+    padding: 0.75rem 1rem; margin: 1rem 0;
+    font-size: 11pt;
+  }
+  .pagebreak { page-break-after: always; }
+
+  @media print {
+    .controls { display: none; }
+    .doc { margin: 0; padding: 1rem 1.5rem; max-width: none; }
+    h2 { page-break-after: avoid; }
+    h3 { page-break-after: avoid; }
+    table, ol, ul { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <strong>SPIKES STAY 規約まとめ（印刷用）</strong>
+  <button onclick="window.print()">PDFとして保存（Cmd+P → PDFに保存）</button>
+  <a href="index.html">← LPに戻る</a>
+</div>
+
+<article class="doc">
+  <h1>SPIKES STAY PROJECT 規約まとめ</h1>
+  <p class="meta">利用規約／プライバシーポリシー／重要事項同意チェックリスト 統合版<br>
+  制定日：2026年●月●日 ／ 運営：SPIKES STAY PROJECT 実行委員会</p>
+
+  <div class="callout">
+    本書は、SPIKES STAY PROJECT に参加するホスト・ゲスト双方が同意すべき事項を1冊にまとめたものです。
+    フォーム登録時の同意に加え、保管用としてPDF保存・印刷してご活用ください。
+  </div>
+
+  <!-- ───── 利用規約 ───── -->
+  <h2>第1部　利用規約</h2>
+
+  <h3>第1条（目的・本規約の適用）</h3>
+  <p>本規約は、SPIKES STAY PROJECT（以下「本プロジェクト」）が提供するホスト・ゲストマッチングサービス（以下「本サービス」）の利用条件を定めるものです。本サービスに参加するすべてのホスト・ゲスト（以下総称して「参加者」）は、本規約に同意したうえで利用するものとします。</p>
+
+  <h3>第2条（定義）</h3>
+  <table>
+    <tr><th>用語</th><th>定義</th></tr>
+    <tr><td>ホスト</td><td>自己の居住する住居・シェアハウス等にゲストの宿泊を提供する参加者</td></tr>
+    <tr><td>ゲスト</td><td>ホストの住居に宿泊する参加者</td></tr>
+    <tr><td>マッチング</td><td>運営またはホスト・ゲスト間の合意によって宿泊組み合わせが成立すること</td></tr>
+    <tr><td>登録情報</td><td>Googleフォーム・4S等を通じて参加者が提出した個人情報およびプロフィール情報</td></tr>
+    <tr><td>本イベント</td><td>IVS Kyoto / SPIKESおよびそのサイドイベント</td></tr>
+  </table>
+
+  <h3>第3条（参加資格）</h3>
+  <ol>
+    <li>本サービスへの参加は、本イベントに参加する学生（大学生・大学院生・専門学校生）に限ります。</li>
+    <li>参加者は18歳以上であることを要します。18歳未満の場合は保護者の同意（別紙：保護者同意書）が必要です。</li>
+    <li>運営は、参加資格を満たさないと判断した場合、参加を拒否または取り消す権限を有します。</li>
+  </ol>
+
+  <h3>第4条（ホストの義務・禁止事項）</h3>
+  <p><strong>義務:</strong> 登録情報の正確な入力／マッチング成立後の事前連絡／安全な環境提供／断る場合の早期連絡。</p>
+  <p><strong>禁止:</strong> 金銭・物品・サービスの要求／性的・暴力的・差別的言動／虚偽登録／第三者への無断個人情報提供／勧誘行為。</p>
+
+  <h3>第5条（ゲストの義務・禁止事項）</h3>
+  <p><strong>義務:</strong> ホストルールの尊重／到着時間等の事前連絡／清潔保持・速やか退去／トラブル即時報告。</p>
+  <p><strong>禁止:</strong> ホスト不安時の宿泊強行／第三者連れ込み／無許可飲酒・喫煙・違法薬物／個人情報のSNS無断公開／勧誘行為。</p>
+
+  <h3>第6条（異性間マッチングの禁止）</h3>
+  <p><strong>安全性の観点から、異性間の宿泊マッチングは原則として禁止します。</strong></p>
+
+  <h3>第7条（宿泊中の行動規範）</h3>
+  <ol>
+    <li>夜22時以降は近隣配慮（窓を閉める／騒音回避）。</li>
+    <li>近隣等からの問い合わせには「友人が遊びに来ている」と対応し、本プロジェクト名を不必要に開示しない。</li>
+    <li>備品破損は速やかにホストへ告知・弁償。</li>
+    <li>ゴミ処理はホストの指示に従う。</li>
+  </ol>
+
+  <h3>第8条（マッチングの性質・運営の関与）</h3>
+  <p>マッチングは参加者間の自発的な合意に基づきます。運営が宿泊を保証するものではなく、不成立時は代替手段を可能な範囲で提案します。ホスト・ゲストとも理由を問わず断る権利・宿泊を中止する権利を有します。</p>
+
+  <h3>第9条（免責事項）</h3>
+  <p>運営は、参加者間で発生した<strong>紛争・トラブル・損害・事故等に対して、一切の法的責任を負いません</strong>。盗難・紛失・怪我・財物損害は当事者間で解決します。</p>
+
+  <h3>第10条以降</h3>
+  <p>個人情報の取扱いは第2部、参加資格の取消・規約変更・準拠法（日本法／京都地方裁判所）等は本書末尾に準じます。</p>
+
+  <div class="pagebreak"></div>
+
+  <!-- ───── プラポリ ───── -->
+  <h2>第2部　プライバシーポリシー</h2>
+
+  <h3>1. 基本方針</h3>
+  <p>運営は、参加者の個人情報を個人情報保護法その他関連法規を遵守し、適切に保護します。</p>
+
+  <h3>2. 収集する個人情報</h3>
+  <p><strong>ホスト:</strong> 氏名/ニックネーム、大学・学年、最寄駅・町名（番地・号は収集しない）、最大受け入れ人数・受け入れ条件、属性／尖り、Discord ID／X ID。</p>
+  <p><strong>ゲスト:</strong> 氏名/ニックネーム、大学・学年、居住地域、属性／尖り／Give、恩返し意向、訪問希望時期・泊数・目的、Discord ID／X ID、アレルギー等配慮事項（任意）。</p>
+
+  <h3>3. 利用目的</h3>
+  <p>マッチング、参加者間の情報共有、運営連絡、サービス改善（集計のみ）、安全性の確保。</p>
+
+  <h3>4. 情報の閲覧範囲（マッチング目的）</h3>
+  <div class="callout"><strong>マッチングを成立させる目的で、登録情報は以下の範囲で共有されます。</strong></div>
+  <ol>
+    <li><strong>マッチング相手候補（ホスト⇔ゲスト）への公開</strong>：プロフィール情報を相手側参加者に公開。</li>
+    <li><strong>SPIKES実行委員会・4S運営関係者による閲覧</strong>：登録データ全体を運営側が閲覧（守秘義務あり）。</li>
+    <li><strong>連絡先（Discord ID / X ID）の開示</strong>：マッチング成立後に相手側へ開示。</li>
+  </ol>
+
+  <p><strong>ホスト情報の公開範囲</strong></p>
+  <table class="scope">
+    <tr><th>情報</th><th>ゲスト</th><th>SPIKES運営</th><th>4S運営</th><th>一般公開</th></tr>
+    <tr><td>ニックネーム・大学・学年</td><td>✓</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>最寄駅・町名</td><td>✓</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>受け入れ条件・人数</td><td>✓</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>属性・尖り・語りたいこと</td><td>✓</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>Discord ID / X ID</td><td>マッチング後</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>住所（番地・号）</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+  </table>
+
+  <p><strong>ゲスト情報の公開範囲</strong></p>
+  <table class="scope">
+    <tr><th>情報</th><th>ホスト</th><th>SPIKES運営</th><th>4S運営</th><th>一般公開</th></tr>
+    <tr><td>ニックネーム・大学・学年</td><td>WL</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>居住地域</td><td>WL</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>属性・尖り・Give</td><td>WL</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>恩返し意向</td><td>WL</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>Discord ID / X ID</td><td>マッチング後</td><td>✓</td><td>✓</td><td>—</td></tr>
+    <tr><td>アレルギー等配慮事項</td><td>マッチング後のみ</td><td>✓</td><td>—</td><td>—</td></tr>
+  </table>
+
+  <h3>5. 第三者提供</h3>
+  <p>本人同意・法令・生命財産保護のため必要な場合を除き、第三者提供は行いません。</p>
+
+  <h3>6. 管理・保護</h3>
+  <p>Googleフォーム・スプレッドシート上で運営限定のアクセス権限のもと管理。本イベント終了から3ヶ月後を目安に削除。</p>
+
+  <h3>7. 参加者の権利</h3>
+  <p>開示請求・訂正/削除請求・利用停止請求が可能（Discord/Xから申請）。</p>
+
+  <div class="pagebreak"></div>
+
+  <!-- ───── 同意チェックリスト ───── -->
+  <h2>第3部　重要事項同意チェックリスト</h2>
+  <p>フォーム登録時に、以下のすべての項目に同意いただきます。</p>
+
+  <h3>全参加者共通</h3>
+  <ol>
+    <li><strong>運営は宿泊の安全・トラブルに責任を負わない</strong>ことを理解した。</li>
+    <li><strong>異性間の宿泊マッチングは禁止</strong>であることを理解した。</li>
+    <li><strong>宿泊費・金銭の授受は禁止</strong>であることを理解した。</li>
+    <li><strong>マッチング相手（ホスト⇔ゲスト）に登録情報が公開される</strong>ことに同意した。</li>
+    <li><strong>SPIKES実行委員会・4S運営関係者が登録データを閲覧する</strong>ことに同意した。</li>
+    <li><strong>マッチング成立後、Discord ID / X ID等の連絡先が相手に開示される</strong>ことに同意した。</li>
+    <li>嫌だと感じたら断れる／断られる場合もあることに同意した。</li>
+  </ol>
+
+  <h3>ホスト専用</h3>
+  <ol>
+    <li>夜22時以降の近隣配慮を徹底し、本プロジェクト名を不必要に開示しない。</li>
+    <li>登録した最寄駅・町名はマッチング前から参加者に公開されることを理解した。</li>
+  </ol>
+
+  <h3>ゲスト専用</h3>
+  <ol>
+    <li>ホストのルールを最優先に尊重する。</li>
+    <li>マッチングが保証されるわけではなく、自己でゲストハウス等を手配する準備があることを確認した。</li>
+  </ol>
+
+  <h3>署名（保管用）</h3>
+  <table style="margin-top:1rem">
+    <tr><th style="width:30%">同意日</th><td>　　　年　　月　　日</td></tr>
+    <tr><th>氏名</th><td>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</td></tr>
+    <tr><th>署名</th><td style="height:50px">　</td></tr>
+  </table>
+  <p style="font-size:9pt;color:#666;margin-top:0.5rem">※ 本ページは保管用です。フォーム同意で法的に有効な意思表示が完了します。</p>
+</article>
+
+</body>
+</html>

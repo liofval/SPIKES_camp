@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保護者同意書 | SPIKES STAY PROJECT</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    color: #111;
+    background: #fff;
+    line-height: 1.85;
+    font-size: 11.5pt;
+  }
+  .controls {
+    position: fixed; top: 0; left: 0; right: 0;
+    background: #0f0e0b; color: #fff;
+    padding: 0.75rem 1rem;
+    display: flex; align-items: center; gap: 1rem;
+    z-index: 100;
+    font-size: 13px;
+  }
+  .controls strong { font-size: 14px; }
+  .controls button {
+    background: #c8401a; color: #fff;
+    border: none; padding: 0.5rem 1rem;
+    cursor: pointer; font-weight: 700;
+    font-size: 13px;
+  }
+  .controls a { color: #c8401a; margin-left: auto; text-decoration: none; }
+
+  .doc {
+    max-width: 720px;
+    margin: 4rem auto 3rem;
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 22pt;
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+  .subtitle {
+    text-align: center;
+    color: #666; font-size: 11pt;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: 13pt;
+    margin: 1.75rem 0 0.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.25rem;
+  }
+  p { margin-bottom: 0.6rem; }
+  ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { margin-bottom: 0.3rem; }
+  strong { font-weight: 700; }
+
+  .lead {
+    background: #faf6ef;
+    border-left: 3px solid #c8401a;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0 1.5rem;
+    font-size: 11pt;
+  }
+  table {
+    width: 100%; border-collapse: collapse;
+    margin: 0.75rem 0;
+  }
+  table.fillin th, table.fillin td {
+    border: 1px solid #333;
+    padding: 0.6rem 0.85rem;
+    text-align: left; vertical-align: top;
+    font-size: 11pt;
+  }
+  table.fillin th {
+    background: #f3f1eb;
+    font-weight: 700;
+    width: 28%;
+    white-space: nowrap;
+  }
+  .row-blank { height: 32px; }
+  .signature-row { height: 56px; }
+
+  .footnote {
+    margin-top: 2rem;
+    font-size: 10pt;
+    color: #555;
+    line-height: 1.7;
+  }
+
+  @media print {
+    .controls { display: none; }
+    .doc { margin: 0; padding: 1.5rem 2rem; max-width: none; }
+    @page { margin: 18mm 16mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <strong>保護者同意書（印刷・PDF用）</strong>
+  <button onclick="window.print()">PDFとして保存（Cmd+P → PDFに保存）</button>
+  <a href="index.html">← LPに戻る</a>
+</div>
+
+<article class="doc">
+  <h1>保護者同意書</h1>
+  <div class="subtitle">SPIKES STAY PROJECT 参加用</div>
+
+  <div class="lead">
+    本プロジェクトは京都の学生宅での宿泊マッチングサービスです。
+    参加者が<strong>満18歳未満</strong>の場合、保護者の同意が必要となります。
+    本書面に必要事項をご記入・署名のうえ、参加者本人の登録フォームでアップロードしてください。
+  </div>
+
+  <h2>1. 参加者本人</h2>
+  <table class="fillin">
+    <tr><th>氏名（フリガナ）</th><td class="row-blank"></td></tr>
+    <tr><th>生年月日</th><td class="row-blank">　　　　年　　月　　日（参加時年齢　　歳）</td></tr>
+    <tr><th>所属（学校名・学年）</th><td class="row-blank"></td></tr>
+    <tr><th>参加区分</th><td>□ ホスト　／　□ ゲスト</td></tr>
+  </table>
+
+  <h2>2. 保護者の同意事項</h2>
+  <p>本プロジェクトの<strong>利用規約・プライバシーポリシー・重要事項同意チェックリスト</strong>を確認のうえ、以下に同意します。</p>
+  <ol>
+    <li>本人が本プロジェクトに参加すること、および登録情報がマッチング相手と運営に共有されることに同意します。</li>
+    <li>本プロジェクトでは<strong>異性間マッチングが禁止</strong>されていること、宿泊中の事故・トラブルは<strong>運営が責任を負わない</strong>ことを理解しています。</li>
+    <li>本人が宿泊期間中に近隣配慮・行動規範を遵守することに対し、保護者として責任を共有します。</li>
+    <li>緊急時には保護者本人と運営が連絡を取り合うことに同意します。</li>
+  </ol>
+
+  <h2>3. 保護者の連絡先</h2>
+  <table class="fillin">
+    <tr><th>氏名（フリガナ）</th><td class="row-blank"></td></tr>
+    <tr><th>続柄</th><td class="row-blank">参加者から見た続柄（例：父／母）</td></tr>
+    <tr><th>電話番号</th><td class="row-blank">緊急連絡先</td></tr>
+    <tr><th>メールアドレス</th><td class="row-blank"></td></tr>
+  </table>
+
+  <h2>4. 同意・署名</h2>
+  <table class="fillin">
+    <tr><th>同意日</th><td class="row-blank">　　　　年　　月　　日</td></tr>
+    <tr><th>保護者氏名（自署）</th><td class="signature-row"></td></tr>
+  </table>
+
+  <p class="footnote">
+    ※ 本書面は手書きで記入のうえ、写真撮影またはスキャンしてフォームでアップロードしてください。<br>
+    ※ ご不明な点は SPIKES STAY PROJECT 運営（Discord / X @SPIKES4s）までお問い合わせください。<br>
+    ※ 本書面の取扱いはプライバシーポリシーに準じ、本イベント終了後3ヶ月を目安に削除します。
+  </p>
+</article>
+
+</body>
+</html>
